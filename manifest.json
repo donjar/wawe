@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "WhatsApp Web Enhancer",
+  "version": "0.1",
+
+  "description": "Supercharge your WhatsApp Web!",
+
+  "icons": {
+    "48": "icons/wawe-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/"],
+      "js": ["wawe.js"]
+    }
+  ]
+}
