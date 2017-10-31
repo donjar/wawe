@@ -6,7 +6,8 @@
   "description": "Supercharge your WhatsApp Web!",
 
   "permissions": [
-    "https://web.whatsapp.com/"
+    "https://web.whatsapp.com/",
+    "storage"
   ],
 
   "browser_action": {
