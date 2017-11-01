@@ -1,0 +1,25 @@
+{
+  "name": "wawe",
+  "version": "0.1.0",
+  "description": "Supercharge your WhatsApp Web!",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donjar/wawe.git"
+  },
+  "author": "Herbert Ilhan Tanujaya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/donjar/wawe/issues"
+  },
+  "scripts": {
+    "build": "babel src -d out"
+  },
+  "homepage": "https://github.com/donjar/wawe#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}

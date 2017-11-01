@@ -14,6 +14,6 @@
   "browser_action": {
     "default_icon": "icons/wawe-32.png",
     "default_title": "WhatsApp Web Enhancer",
-    "default_popup": "popup/index.html"
+    "default_popup": "out/popup/index.html"
   }
 }
