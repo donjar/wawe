@@ -12,6 +12,7 @@ function bindState(checkboxId) {
 
   storage.then((item) => {
     elem.checked = item[checkboxId];
+    act(checkboxId, item[checkboxId]);
   });
 
   elem.addEventListener('click', (e) => {
