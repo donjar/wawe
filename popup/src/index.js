@@ -1,4 +1,4 @@
-import './HeaderDisabler.js';
+import HeaderDisabler from './HeaderDisabler.js';
 
 const storage = browser.storage.local.get();
 
@@ -23,16 +23,13 @@ function bindState(checkboxId) {
  * Runs the method associated with the event, and sets the local storage.
  */
 function act(eventName, eventValue) {
-  if (eventName == 'headerDisabler' && eventValue) {
-    HeaderDisabler.on();
-  } else if (eventName == 'headerDisabler' && !eventValue) {
-    HeaderDisabler.off();
+  if (eventName === 'disableHeader') {
+    eventValue ? HeaderDisabler.on() : HeaderDisabler.off();
   }
 
   browser.storage.local.set({ [eventName]: eventValue });
 }
 
-console.log('hi');
 for (const methodName of ['disableHeader']) {
   document.getElementsByTagName('body')[0].innerHTML +=
     `<input type="checkbox" id="${methodName}">
