@@ -48,11 +48,15 @@ class Wawe {
   setDisableHeader(disable) {
     const cssCode = '._3YewW:not(._1UvQg):not(.MwhOx) { display: none; }';
 
-    if (disable) {
-      browser.tabs.insertCSS(null, { code: cssCode });
-    } else {
-      browser.tabs.removeCSS(null, { code: cssCode });
-    }
+    browser.tabs.query({ url: 'https://web.whatsapp.com/' }).then((tabs) => {
+      for (const tab of tabs) {
+        if (disable) {
+          browser.tabs.insertCSS(tab.id, { code: cssCode });
+        } else {
+          browser.tabs.removeCSS(tab.id, { code: cssCode });
+        }
+      }
+    });
   }
 }
 
