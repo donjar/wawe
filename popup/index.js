@@ -1,8 +1,12 @@
 class Wawe {
   constructor() {
+    const body = document.getElementsByTagName('body')[0];
+
     this.storage = browser.storage.local.get();
 
     for (const methodName of ['disableHeader']) {
+      body.innerHTML += `<input type="checkbox" id="${methodName}">
+                         <label for="${methodName}">${methodName}</label>`;
       this.bindState(methodName);
     }
   }
