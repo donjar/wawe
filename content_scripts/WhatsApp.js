@@ -1,7 +1,7 @@
 browser.runtime.onMessage.addListener(receive);
 
 function receive(msg) {
-  if (msg.unreadCount) {
+  if (msg.unreadCount !== undefined) {
     setUnreadCount(msg.unreadCount);
   }
 }

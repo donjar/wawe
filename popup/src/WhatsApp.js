@@ -24,9 +24,9 @@ export default class WhatsApp {
     });
   }
 
-  static setUnreadCount(unreadCount) {
+  static setUnreadCount(count) {
     actOnWhatsApp(tab => {
-      browser.tabs.sendMessage(tab.id, { unreadCount: 0 });
+      browser.tabs.sendMessage(tab.id, { unreadCount: count });
     });
   }
 }
