@@ -1,4 +1,5 @@
 import HeaderDisabler from './HeaderDisabler.js';
+import Muter from './Muter.js';
 
 const storage = browser.storage.local.get();
 
@@ -26,14 +27,16 @@ function bindState(checkboxId) {
 function act(eventName, eventValue) {
   if (eventName === 'disableHeader') {
     eventValue ? HeaderDisabler.on() : HeaderDisabler.off();
+  } else if (eventName === 'muter') {
+    eventValue ? Muter.on() : Muter.off();
   }
 
   browser.storage.local.set({ [eventName]: eventValue });
 }
 
-for (const methodName of ['disableHeader']) {
+for (const methodName of ['disableHeader', 'muter']) {
   document.getElementsByTagName('body')[0].innerHTML +=
-    `<input type="checkbox" id="${methodName}">
-     <label for="${methodName}">${methodName}</label>`;
+    `<p><input type="checkbox" id="${methodName}">
+     <label for="${methodName}">${methodName}</label></p>`;
   bindState(methodName);
 }
