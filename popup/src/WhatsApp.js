@@ -8,7 +8,7 @@ function actOnWhatsApp(tabAction) {
     for (const tab of tabs) {
       tabAction(tab);
     }
-  })
+  });
 }
 
 export default class WhatsApp {

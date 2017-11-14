@@ -26,12 +26,12 @@ function bindState(checkboxId) {
  */
 function act(eventName, eventValue) {
   switch (eventName) {
-    case 'disableHeader':
-      eventValue ? HeaderDisabler.on() : HeaderDisabler.off();
-      break;
-    case 'mute':
-      eventValue ? Muter.on() : Muter.off();
-      break;
+  case 'disableHeader':
+    eventValue ? HeaderDisabler.on() : HeaderDisabler.off();
+    break;
+  case 'mute':
+    eventValue ? Muter.on() : Muter.off();
+    break;
   }
 
   browser.storage.local.set({ [eventName]: eventValue });

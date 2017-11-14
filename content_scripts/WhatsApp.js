@@ -7,7 +7,7 @@ function receive(msg) {
 }
 
 function setUnreadCount(count) {
-  setTitle(count === 0 ? 'WhatsApp' : `(${count}) WhatsApp`)
+  setTitle(count === 0 ? 'WhatsApp' : `(${count}) WhatsApp`);
 }
 
 function setTitle(newTitle) {
