@@ -20,7 +20,7 @@
   "content_scripts": [
   {
     "matches": ["*://web.whatsapp.com/"],
-    "js": ["contentScript.js"]
+    "js": ["content_scripts/WhatsApp.js"]
   }
   ]
 }
