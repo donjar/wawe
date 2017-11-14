@@ -25,21 +25,22 @@ function bindState(checkboxId) {
  * Runs the method associated with the event, and sets the local storage.
  */
 function act(eventName, eventValue) {
-  if (eventName === 'disableHeader') {
-    eventValue ? HeaderDisabler.on() : HeaderDisabler.off();
-  } else if (eventName === 'mute') {
-    eventValue ? Muter.on() : Muter.off();
+  switch (eventName) {
+    case 'disableHeader':
+      eventValue ? HeaderDisabler.on() : HeaderDisabler.off();
+      break;
+    case 'mute':
+      eventValue ? Muter.on() : Muter.off();
+      break;
   }
 
   browser.storage.local.set({ [eventName]: eventValue });
 }
 
 for (const methodName of ['disableHeader', 'mute']) {
-  document.getElementsByTagName('body')[0].innerHTML +=
+  document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend',
     `<p><input type="checkbox" id="${methodName}">
-     <label for="${methodName}">${methodName}</label></p>`;
-}
-
-for (const methodName of ['disableHeader', 'mute']) {
+     <label for="${methodName}">${methodName}</label></p>`
+  );
   bindState(methodName);
 }

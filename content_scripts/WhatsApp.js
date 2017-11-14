@@ -1,9 +1,13 @@
 browser.runtime.onMessage.addListener(receive);
 
 function receive(msg) {
-  if (msg.title) {
-    setTitle(msg.title);
+  if (msg.unreadCount) {
+    setUnreadCount(msg.unreadCount);
   }
+}
+
+function setUnreadCount(count) {
+  setTitle(count === 0 ? 'WhatsApp' : `(${count}) WhatsApp`)
 }
 
 function setTitle(newTitle) {
