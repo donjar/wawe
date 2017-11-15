@@ -11,10 +11,15 @@ function actOnWhatsApp(tabAction) {
   });
 }
 
+let portsToWindows = [];
+actOnWhatsApp(tab => {
+  portsToWindows.push(browser.tabs.connect(tab.id));
+});
+
 function sendMessage(msg) {
-  actOnWhatsApp(tab => {
-    browser.tabs.sendMessage(tab.id, msg);
-  });
+  for (const port of portsToWindows) {
+    port.postMessage(msg);
+  }
 }
 
 export default class WhatsApp {
