@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "description": "Supercharge your WhatsApp Web!",
   "scripts": {
-    "build": "webpack popup/src/index.js popup/out/index.js --watch",
-    "lint": "eslint popup/src content_scripts",
-    "lintfix": "eslint popup/src content_scripts --fix"
+    "build": "webpack --watch",
+    "lint": "eslint src",
+    "lintfix": "eslint src --fix"
   },
   "repository": {
     "type": "git",
@@ -19,9 +19,6 @@
   "homepage": "https://github.com/donjar/wawe#readme",
   "devDependencies": {
     "eslint": "^4.11.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-config-google": "^0.9.1",
-    "eslint-plugin-import": "^2.8.0",
     "webpack": "^3.8.1"
   }
 }

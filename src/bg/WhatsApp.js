@@ -11,6 +11,12 @@ function actOnWhatsApp(tabAction) {
   });
 }
 
+function sendMessage(msg) {
+  actOnWhatsApp(tab => {
+    browser.tabs.sendMessage(tab.id, msg);
+  });
+}
+
 export default class WhatsApp {
   static insertCSS(css) {
     actOnWhatsApp(tab => {
@@ -26,7 +32,7 @@ export default class WhatsApp {
 
   static setUnreadCount(count) {
     actOnWhatsApp(tab => {
-      browser.tabs.sendMessage(tab.id, { unreadCount: count });
+      sendMessage({ unreadCount: count });
     });
   }
 }

@@ -1,5 +1,5 @@
-import HeaderDisabler from './actions/HeaderDisabler.js';
-import Muter from './actions/Muter.js';
+import HeaderDisabler from '../bg/actions/HeaderDisabler.js';
+import Muter from '../bg/actions/Muter.js';
 
 const storage = browser.storage.local.get();
 

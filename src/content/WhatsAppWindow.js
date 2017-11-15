@@ -1,11 +1,3 @@
-browser.runtime.onMessage.addListener(receive);
-
-function receive(msg) {
-  if (msg.unreadCount !== undefined) {
-    setUnreadCount(msg.unreadCount);
-  }
-}
-
 function setUnreadCount(count) {
   setTitle(count === 0 ? 'WhatsApp' : `(${count}) WhatsApp`);
 }
@@ -13,3 +5,9 @@ function setUnreadCount(count) {
 function setTitle(newTitle) {
   document.title = newTitle;
 }
+
+browser.runtime.onMessage.addListener(msg => {
+  if (msg.unreadCount !== undefined) {
+    setUnreadCount(msg.unreadCount);
+  }
+});
